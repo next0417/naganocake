@@ -1,0 +1,39 @@
+<h2>配送先登録/一覧</h2>
+<%= form_with model: @newaddress, url: addresses_path do |f| %>
+<table>
+  <tr>
+    <td>郵便番号(ハイフンなし)</td>
+    <td><%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %></td>
+  </tr>
+  <tr>
+    <td>住所</td>
+    <td colspan="3"><%= f.text_field :address, autofocus: true, autocomplete: "address" %></td>
+  </tr>
+  <tr>
+    <td>宛名</td>
+    <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+  </tr>
+</table>
+<%= f.submit "新規登録", class: 'btn btn-success' %>
+<% end %>
+
+
+<table border="2">
+  <% @adresses.each do |f| %>
+  <tr>
+    <th>郵便番号</th>
+    <th>住所</th>
+    <th>宛名</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= f.postal_code %></td>
+    <td><%= f.address %></td>
+    <td><%= f.name %></td>
+    <td>
+      <%= link_to "編集する", edit_address_path(f.id), class: 'btn btn-success' %>
+      <%= link_to "削除する", address_path(f.id), method: :delete, class: 'btn btn-danger' %>
+    </td>
+  </tr>
+  <% end %>
+</table>

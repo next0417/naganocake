@@ -1,0 +1,23 @@
+<h2>商品詳細</h2>
+
+<label>商品画像</label>
+<%= image_tag @item.get_image(100, 100) %><br>
+
+<label>商品名</label>
+<%= @item.name %><br>
+
+<label>商品説明</label>
+<%= @item.introduction %><br>
+
+<label>ジャンル</label>
+<%= @item.genre.name %>
+<br>
+
+<label>税抜価格</label>
+<%= @item.price %><br>
+
+<label>製造ステータス</label>
+<%= Item.is_actives_i18n[@item.is_active] %>
+<br>
+
+<%= link_to "編集する", edit_admin_item_path(@item.id), class: 'btn btn-success' %>

@@ -1,2 +1,2 @@
-class Public::GenresController < ApplicationController
+class Public::GenresController < Public::ApplicationController
 end
