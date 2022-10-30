@@ -7,6 +7,6 @@
 <table class="center">
   <tr>
     <td><%= link_to "退会しない", customers_mypage_path(@customer.id), class: 'btn btn-primary' %></td>
-    <td><%= link_to "退会する", customers_mypage_path(@customer.id), class: 'btn btn-denger' %></td>
+    <td><%= link_to "退会する", customers_path, method: :patch, class: 'btn btn-danger' %></td>
   </tr>
 </table>

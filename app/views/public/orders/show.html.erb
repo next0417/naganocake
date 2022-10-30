@@ -47,15 +47,14 @@
     <th>個数</th>
     <th>小計</th>
   </tr>
+  <% @order.ordering_products.each do |product| %>
   <tr>
-    <% @order.ordering_products.each do |product| %>
     <td><%= product.item.name %></td>
     <td><%= product.item.with_tax_price %></td>
     <td><%= product.amount %></td>
     <td>
       <%= product.item.with_tax_price * product.amount %>
     </td>
-    <% end %>
   </tr>
-
+  <% end %>
 </table>

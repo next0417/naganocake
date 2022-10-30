@@ -12,7 +12,7 @@ class Public::OrdersController < Public::ApplicationController
     if payment_method = "0"
       @order.postal_code = current_customer.postal_code
       @order.address = current_customer.address
-      @order.name = current_customer.first_name + current_customer.last_name
+      @order.name = current_customer.last_name + current_customer.first_name
     elsif payment_method = "1"
       @address = Address.find(params[:order][:address_id])
     else
@@ -44,7 +44,7 @@ class Public::OrdersController < Public::ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @orders = current_customer.orders
     @cart_items = CartItem.all
   end
 

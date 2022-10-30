@@ -3,7 +3,7 @@ class Public::AddressesController < Public::ApplicationController
     @newaddress = Address.new(address_params)
     @newaddress.customer_id = current_customer.id
     @newaddress.save!
-    @adresses = Address.all
+    @adresses = current_customer.addresses
     redirect_to addresses_path
   end
 
@@ -11,7 +11,7 @@ class Public::AddressesController < Public::ApplicationController
     @customer = current_customer
     @newaddress = Address.new
     @address = @customer.address
-    @adresses = Address.all
+    @adresses = current_customer.addresses
   end
 
   def edit

@@ -19,11 +19,7 @@
         </td>
         <td><%= f.email %></td>
         <td>
-          <% if f.is_deleted %>
-          退会
-          <% else %>
-          有効
-          <% end %>
+          <%= f.is_deleted_i18n %>
         </td>
       </tr>
     <% end %>

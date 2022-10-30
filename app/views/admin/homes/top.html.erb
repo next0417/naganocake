@@ -18,8 +18,9 @@
       </td>
       <td><%= f.name %></td>
       <% @sum = 0 %>
-      <% f.ordering_products.each do |product| %>
       <td>
+      <% f.ordering_products.each do |product| %>
+
         <% @sum += product.amount %>
       <% end %>
         <%= @sum %>

@@ -10,11 +10,19 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <% @items.each do |f| %>
-        <%= image_tag f.get_image(200, 200) %><br>
-      <%= f.name %><br>
-      ￥<%= f.price %><br>
-      <% end %>
+      <table>
+        <tr>
+          <% @items.each do |f| %>
+          <td>
+            <%= link_to item_path(f.id) do %>
+            <%= image_tag f.get_image(200, 200) %>
+            <% end %><br>
+            <%= f.name %><br>
+            ￥<%= f.price %><br>
+          </td>
+          <% end %>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

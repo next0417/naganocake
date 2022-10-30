@@ -26,7 +26,7 @@
     <td><%= f.radio_button :address_option, "1" %></td>
     <td>
       登録済住所から選択<br>
-      <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display) %>
+      <%= f.select :address_id, options_from_collection_for_select(current_customer.addresses, :id, :address_display) %>
     </td>
   </tr>
   <tr>

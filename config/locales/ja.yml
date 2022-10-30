@@ -1,5 +1,9 @@
  ja:
     enums:
+      customer:
+        is_deleted:
+          cancel_membership: "退会"
+          validity: "有効"
       item:
         is_deleted:
           cancel_membership: "退会"
@@ -21,6 +25,7 @@
           preparing_to_ship: "発送準備中"
           already_shipped: "発送済み"
 
+      ordering_product:
         making_status:
           not_produced: "製作不可"
           awaiting_production: "製作待ち"
